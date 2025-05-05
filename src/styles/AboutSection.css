@@ -1,0 +1,98 @@
+.aboutSection {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	justify-content: center;
+	padding-top: 6rem;
+}
+
+.about__main-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 65%;
+}
+
+.about__main-content {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 2rem;
+	color: #222222;
+}
+
+.about__left {
+	width: 50%;
+}
+
+.about__left-titletext {
+	font-size: 2.2rem;
+	line-height: 3;
+}
+
+.about__left-text {
+	color: #525252;
+	line-height: 1.8;
+}
+
+.about__left-emblems-main,
+.about__left-emblem {
+	display: flex;
+	align-items: center;
+	padding: 0.5rem 0;
+}
+
+.about__left-emblems-main {
+	margin-top: 1rem;
+}
+
+.about__left-icon {
+	margin-right: 0.3rem;
+}
+
+.about__left-span {
+	margin-right: 1.5rem;
+}
+
+.about__left-icon {
+	color: red;
+}
+
+.about__right {
+	margin-top: 4rem;
+	display: flex;
+	width: 50%;
+	border-left: 4px solid red;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+		rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+	border-radius: 6px;
+	height: 14rem;
+	align-items: center;
+}
+
+.about__right-container{
+	margin-left: 3rem;
+	line-height: 2rem;
+	font-style: italic;
+	font-size: 1.2rem;
+}
+
+.about__quote-name {
+	line-height: 3rem;
+}
+
+.about__button {
+	background-color: #ff0000;
+	color: #fff;
+	border: none;
+	font-size: 0.875rem;
+	padding: 0.6rem 1.2rem;
+	border-radius: 6px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.2s ease;
+	margin-top: 1.5rem;
+}
+
+.about__button:hover {
+	background-color: #a80000;
+}
