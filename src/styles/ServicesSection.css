@@ -1,9 +1,10 @@
 .servicesSection {
 	display: flex;
-	height: 100vh;
+	height: auto;
 	width: 100%;
 	justify-content: center;
 	align-items: center;
+	padding: 4rem 0;
 }
 
 .services__main-container {

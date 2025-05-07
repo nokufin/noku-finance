@@ -1,9 +1,9 @@
 .aboutSection {
 	display: flex;
-	height: 100vh;
+	height: auto;
 	width: 100%;
 	justify-content: center;
-	padding-top: 6rem;
+	padding: 4rem 0;
 }
 
 .about__main-container {
