@@ -7,6 +7,7 @@ function Navbar() {
 	const [activeDropdown, setActiveDropdown] = useState(null);
 	const [isClosing, setIsClosing] = useState(false);
 	const [isScrolled, setIsScrolled] = useState(false);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 	const timeoutRef = useRef(null);
 
@@ -47,18 +48,20 @@ function Navbar() {
 
 	const handleMouseEnter = item => {
 		clearTimeout(timeoutRef.current);
+		setIsClosing(false);
 		setActiveDropdown(item);
 	};
 
 	const handleMouseLeave = () => {
-		if (activeDropdown) {
+		timeoutRef.current = setTimeout(() => {
 			setIsClosing(true);
-			timeoutRef.current = setTimeout(() => {
-				setIsClosing(false);
+			setTimeout(() => {
 				setActiveDropdown(null);
-			}, 400);
-		}
+				setIsClosing(false);
+			}, 300);
+		}, 100);
 	};
+
 	useEffect(() => {
 		const handleScroll = () => {
 			if (window.scrollY > 20) {
@@ -72,6 +75,10 @@ function Navbar() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
+	const toggleMobileMenu = () => {
+		setIsMobileMenuOpen(!isMobileMenuOpen);
+	};
+
 	return (
 		<nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
 			<div className="navbar__left">
@@ -79,7 +86,22 @@ function Navbar() {
 				<span className="navbar__company-name">NOKU Finance</span>
 			</div>
 			<div className="navbar__right">
-				<ul className="navbar__menu">
+				<button
+					className={`hamburger-menu ${
+						isMobileMenuOpen ? 'active' : ''
+					}`}
+					onClick={toggleMobileMenu}
+					aria-label="Toggle menu"
+				>
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+				<ul
+					className={`navbar__menu ${
+						isMobileMenuOpen ? 'mobile-active' : ''
+					}`}
+				>
 					{menuItems.map((item, index) => (
 						<li
 							key={index}
@@ -92,18 +114,31 @@ function Navbar() {
 							}
 							onMouseLeave={handleMouseLeave}
 						>
-							{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-							<a
-								href="#"
-								className={`navbar__menu-link ${
-									item === 'Szolgáltatások' &&
-									activeDropdown === 'Szolgáltatások'
-										? 'active-submenu'
-										: ''
-								} ${isScrolled ? 'scrolled-link' : ''}`}
-							>
-								{item}
-							</a>
+							{item === 'Szolgáltatások' ? (
+								<button
+									className={`navbar__menu-link ${
+										activeDropdown === 'Szolgáltatások'
+											? 'active-submenu'
+											: ''
+									} ${isScrolled ? 'scrolled-link' : ''}`}
+									onMouseEnter={() =>
+										handleMouseEnter('Szolgáltatások')
+									}
+									onMouseLeave={handleMouseLeave}
+								>
+									{item}
+								</button>
+							) : (
+								// eslint-disable-next-line jsx-a11y/anchor-is-valid
+								<a
+									href="#"
+									className={`navbar__menu-link ${
+										isScrolled ? 'scrolled-link' : ''
+									}`}
+								>
+									{item}
+								</a>
+							)}
 							{item === 'Szolgáltatások' && (
 								<div
 									className={`mega-dropdown ${

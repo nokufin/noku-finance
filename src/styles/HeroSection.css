@@ -111,3 +111,95 @@
 		opacity: 1;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.hero__logo {
+		width: 320px;
+		padding: 1.5rem;
+	}
+
+	.hero__title h1 {
+		font-size: 2.8rem;
+	}
+
+	.hero__subtitle-p {
+		font-size: 1.3rem;
+		padding: 0 1rem 1.5rem;
+	}
+
+	.hero__buttons {
+		gap: 1.5rem;
+	}
+
+	.hero__button {
+		padding: 0.9rem 1.3rem;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.hero__logo {
+		width: 280px;
+		padding: 1rem;
+	}
+
+	.hero__title h1 {
+		font-size: 2.2rem;
+		text-align: center;
+	}
+
+	.hero__subtitle-p {
+		font-size: 1.1rem;
+		padding: 0 1rem 1.5rem;
+	}
+
+	.hero__buttons {
+		flex-direction: row;
+		gap: 1rem;
+		align-items: center;
+	}
+
+	.hero__button {
+		width: auto;
+		margin-bottom: 2rem;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.hero__logo {
+		width: 240px;
+	}
+
+	.hero__title h1 {
+		font-size: 1.8rem;
+	}
+
+	.hero__subtitle-p {
+		font-size: 1rem;
+	}
+
+	.hero__button {
+		width: 90%;
+		font-size: 0.8rem;
+		padding: 0.8rem 1.2rem;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.hero__logo {
+		width: 200px;
+	}
+
+	.hero__title h1 {
+		font-size: 1.5rem;
+	}
+
+	.hero__subtitle-p {
+		font-size: 0.9rem;
+	}
+
+	.hero__button {
+		width: 95%;
+		font-size: 0.75rem;
+		padding: 0.7rem 1rem;
+	}
+}

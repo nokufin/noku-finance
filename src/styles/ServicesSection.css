@@ -44,7 +44,7 @@
 	display: block;
 	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 	padding: 1.5rem;
-	height: 16rem;
+	min-height: 16rem;
 	transition: transform 0.1s ease, box-shadow 0.3s ease;
 	cursor: pointer;
 }
@@ -111,5 +111,114 @@
 	100% {
 		-webkit-transform: translateY(-10px);
 		transform: translateY(-10px);
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.servicesSection {
+		height: auto;
+		padding: 4rem 0;
+	}
+
+	.services__container {
+		min-width: 90%;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1.5rem;
+	}
+
+	.services__card {
+		height: auto;
+		min-height: 14rem;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.servicesSection {
+		height: auto;
+		padding: 0 1rem;
+	}
+
+	.services__main-container {
+		display: flex;
+		flex-direction: column;
+		max-width: 90%;
+	}
+
+	.services__intro {
+		margin-bottom: 2rem;
+	}
+
+	.services__intro-title {
+		margin-top: -50px;
+		font-size: 1.8rem;
+	}
+
+	.services__intro-text {
+		font-size: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.services__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.services__card {
+		height: auto;
+		width: 100%;
+	}
+
+	.services__card-title {
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		white-space: nowrap;
+	}
+
+	.services__card-title-text {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 375px) {
+	.services__intro-title {
+		font-size: 1.6rem;
+	}
+
+	.services__intro-text {
+		font-size: 0.9rem;
+	}
+
+	.services__card-title-text {
+		font-size: 1.3rem;
+	}
+
+	.services__card-list-element {
+		font-size: 0.9rem;
+		line-height: 2rem;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.services__intro-title {
+		font-size: 1.4rem;
+	}
+
+	.services__intro-text {
+		font-size: 0.85rem;
+	}
+
+	.services__card-title-text {
+		font-size: 1.2rem;
+	}
+
+	.services__card-list-element {
+		font-size: 0.85rem;
+		line-height: 1.8rem;
 	}
 }
