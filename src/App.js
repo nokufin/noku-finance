@@ -1,20 +1,20 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import ServicesSection from './components/ServicesSection';
-import AboutSection from './components/AboutSection';
-import ContactSection from './components/ContactSection';
-import Footer from './components/Footer';
+import Kezdolap from './pages/Kezdolap';
+import Kapcsolat from './pages/Kapcsolat';
+import NemEletBiztositas from './pages/NemEletBiztositas';
 
 function App() {
 	return (
-		<div className="App">
+		<Router>
 			<Navbar />
-			<HeroSection />
-			<ServicesSection />
-			<AboutSection />
-			<ContactSection />
-			<Footer />
-		</div>
+			<Routes>
+				<Route path="/" element={<Kezdolap />} />
+				<Route path="/kapcsolat" element={<Kapcsolat />} />
+				<Route path='/nemeletbiztositas' element={<NemEletBiztositas />} />
+			</Routes>
+		</Router>
 	);
 }
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../styles/ContactSection.css';
 import { FilePen } from 'lucide-react';
 
-function ContactSection() {
+const ContactSection = ({ variant = 'default' }) => {
 	const [formData, setFormData] = useState({
 		name: '',
 		email: '',
@@ -25,7 +25,12 @@ function ContactSection() {
 	};
 
 	return (
-		<section className="contact">
+		<div
+			id="contact__section"
+			className={`contact ${
+				variant === 'contactPage' ? 'contact--narrow' : ''
+			}`}
+		>
 			<div className="contact__container">
 				<div className="contact__header">
 					<FilePen className="contact__icon" />
@@ -125,8 +130,8 @@ function ContactSection() {
 					</div>
 				</form>
 			</div>
-		</section>
+		</div>
 	);
-}
+};
 
 export default ContactSection;

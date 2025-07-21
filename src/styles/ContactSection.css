@@ -2,6 +2,15 @@
 	padding: 4rem 22rem;
 }
 
+.contact.contact--narrow {
+	padding: 0 !important;
+	max-width: 700px !important;
+	margin: 0 auto !important;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	transform: scale(0.9);
+}
+
 .contact__container {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -97,92 +106,4 @@
 
 .contact__submit button:hover {
 	background-color: #a80000;
-}
-
-@media screen and (max-width: 1024px) {
-	.contact {
-		padding: 4rem 4rem;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.contact {
-		padding: 3rem 2rem;
-	}
-
-	.contact__form-row {
-		flex-direction: column;
-	}
-
-	.contact__container {
-		padding: 1.5rem 2rem;
-	}
-
-	.contact__title {
-		font-size: 1.6rem;
-	}
-}
-
-@media screen and (max-width: 425px) {
-	.contact {
-		padding: 2rem 1rem;
-	}
-
-	.contact__container {
-		padding: 1.25rem 1.5rem;
-	}
-
-	.contact__title {
-		font-size: 1.4rem;
-	}
-
-	.contact__description {
-		font-size: 0.9rem;
-	}
-
-	.contact__field label {
-		font-size: 0.9rem;
-	}
-
-	.contact__field input,
-	.contact__field select,
-	.contact__field textarea {
-		padding: 0.6rem 0.8rem;
-		font-size: 0.9rem;
-	}
-
-	.contact__submit button {
-		padding: 0.7rem 1.5rem;
-		font-size: 0.9rem;
-	}
-}
-
-@media screen and (max-width: 375px) {
-	.contact {
-		padding: 1.5rem 0.75rem;
-	}
-
-	.contact__container {
-		padding: 1rem 1.25rem;
-	}
-
-	.contact__title {
-		font-size: 1.3rem;
-	}
-
-	.contact__icon {
-		width: 40px;
-		height: 40px;
-	}
-
-	.contact__field input,
-	.contact__field select,
-	.contact__field textarea {
-		padding: 0.5rem 0.7rem;
-	}
-
-	.contact__submit button {
-		width: 100%;
-		padding: 0.7rem 1rem;
-	}
 }

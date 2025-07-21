@@ -1,8 +1,15 @@
 import React from 'react';
 import '../styles/HeroSection.css';
 import logo from '../assets/logo/logo.png';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
+	const navigate = useNavigate();
+
+	const contactClick = () => {
+		navigate('/kapcsolat');
+	};
+
 	return (
 		<div className="heroSection">
 			<div className="hero__background"></div>
@@ -12,7 +19,7 @@ const HeroSection = () => {
 					<h1>Okos pénzügyi megoldások a jövődért</h1>
 				</div>
 				<div className="hero__subtitle">
-					<p className='hero__subtitle-p'>
+					<p className="hero__subtitle-p">
 						Átfogó pénzügyi közvetítői szolgáltatások magánszemélyek
 						és vállalkozások számára
 						<br />
@@ -20,11 +27,11 @@ const HeroSection = () => {
 					</p>
 				</div>
 				<div className="hero__buttons">
-					<button className="hero__button hero__button--primary">
+					<button
+						className="hero__button hero__button--primary"
+						onClick={contactClick}
+					>
 						Portfólió Felülvizsgálat
-					</button>
-					<button className="hero__button hero__button--secondary">
-						Kapcsolat
 					</button>
 				</div>
 			</div>

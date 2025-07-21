@@ -1,14 +1,21 @@
 import React from 'react';
 import '../styles/AboutSection.css';
 import { Handshake, Users } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const AboutSection = () => {
+	const navigate = useNavigate();
+
+	const contactClick = () => {
+		navigate('/kapcsolat');
+	};
+
 	const aboutText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor sem. Aliquam erat volutpat. Donec placerat nisl magna, et faucibus arcu condimentum sed. Mauris at ultricies ligula, ut suscipit nibh. In hac habitasse platea dictumst.
     
     Cras ultrices lectus sem, et interdum turpis convallis vel. Praesent eget sagittis dui, at scelerisque mi. Fusce consectetur imperdiet mi, eu fermentum nulla imperdiet eget. Cras convallis mi eget tempus porta.`;
 
 	return (
-		<div className="aboutSection">
+		<div className="aboutSection" id="aboutSection">
 			<div className="about__main-container">
 				<div className="about__main-content">
 					<div className="about__left">
@@ -58,7 +65,7 @@ const AboutSection = () => {
 					</div>
 				</div>
 				<div className="about__button-zone">
-					<button className="about__button">
+					<button className="about__button" onClick={contactClick}>
 						Díjmentes konzultáció
 					</button>
 				</div>

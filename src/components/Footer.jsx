@@ -7,19 +7,17 @@ const Footer = () => {
 	const currentYear = new Date().getFullYear();
 
 	const fastLinkItems = [
-		'Otthon',
-		'Nem életbiztosítás',
-		'Vállalati biztosítás',
-		'Gépjármű-biztosítás',
-		'Életbiztosítás',
-		'Kölcsönök és megtakarítások',
-		'Tőkepiacok',
-		'Érintkezés',
+		'Életbiztosítások',
+		'Vagyonbiztosítások',
+		'Vállalati biztosítások',
+		'Kölcsönök és Megtakarítások',
+		'Befektetések és Tőkepiac',
+		'Kapcsolat, Ajánlatkérés',
 	];
 
 	const contacts = [
-		{ label: 'E-mail', value: 'contact@nokufinance.com', type: 'email' },
-		{ label: 'Telefon', value: '+36 30 792 61 40', type: 'tel' },
+		{ label: 'E-mail', value: 'email@email.com', type: 'email' },
+		{ label: 'Telefon', value: '+36 30 303 03 03', type: 'tel' },
 	];
 
 	return (
@@ -110,8 +108,7 @@ const Footer = () => {
 			</div>
 			<div className="footer__bottom">
 				<div className="footer__copyright">
-					© {currentYear} NOKU Finance. NOKU Finance. Minden jog
-					fenntartva.
+					© {currentYear} NOKU Finance || Minden jog fenntartva.
 				</div>
 			</div>
 		</div>
